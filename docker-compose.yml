@@ -1,0 +1,9 @@
+version: '3'
+services:
+  react_app:
+    build: ./containers/react
+    volumes:
+      - ./backend/:/usr/src/app
+    command: sh -c "cd react-app && npm start"
+    ports:
+      - "3000:3000"
