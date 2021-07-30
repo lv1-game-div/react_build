@@ -16,6 +16,15 @@ $ docker-compose run --rm react_app sh -c "npm install -g create-react-app && cr
 $ docker-compose up -d --build
 ```
 
+## .env
+```
+cd {path/to/project/dir/} && touch .env
+```
+
+```
+echo REACT_APP_API_KEY={YOUR API KEY} >> .env
+```
+
 ## axios
 ```
 $ docker-compose exec react_app ash -c "cd react-app/ && npm install axios"

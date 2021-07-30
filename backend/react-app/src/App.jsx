@@ -17,8 +17,7 @@ export default function App() {
       .catch(err => {
         console.log("error: ",err);
       })
-  }, [keyword])
-
+  }, [setKeyword])
 
   return (
     <div className="content">
@@ -27,20 +26,20 @@ export default function App() {
       <input type="text" onChange={() => setKeyword(keyword)} defaultValue={keyword} />
       <table>
         <tbody>
-            {data.map((value, key) => (
-              <tr key={value.id.videoId}>
-                <td>
-                  <img src={value.snippet.thumbnails.default.url} alt={value.snippet.title} height={value.snippet.thumbnails.default.height+10} width={value.snippet.thumbnails.default.width+10} />
-                </td>
-                <td>
-                  <h3>{value.snippet.title}</h3>
-                  <p>{value.snippet.description}</p>
-                </td>
-                <td>
-                  <span>by {value.snippet.channelTitle}</span>
-                </td>
-              </tr>
-            ))}
+          {data.map((value, key) => (
+            <tr key={value.id.videoId}>
+              <td>
+                <img src={value.snippet.thumbnails.default.url} alt={value.snippet.title} height={value.snippet.thumbnails.default.height+10} width={value.snippet.thumbnails.default.width+10} />
+              </td>
+              <td>
+                <h3>{value.snippet.title}</h3>
+                <p>{value.snippet.description}</p>
+              </td>
+              <td>
+                <span>by {value.snippet.channelTitle}</span>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
